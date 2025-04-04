@@ -13,10 +13,9 @@
 
                 // Display the IP address
                 document.getElementById('ip').innerText = "Your IP address is: " + ipAddress;
-                document.getElementById('country').innerText = "Your country is: " + data.country;
 
                 // Now, use the IP address to get geolocation (country)
-                fetch(`http://ip-api.com/json/${ipAddress}`)
+                fetch(`https://api.country.is/${ipAddress}`)
                     .then(response => response.json())
                     .then(locationData => {
                         // Display the country
