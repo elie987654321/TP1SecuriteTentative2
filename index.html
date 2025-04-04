@@ -1,43 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get IP Address and Country</title>
-    <script>
-        // Fetch IP address from ipify API
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                const ipAddress = data.ip;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DDoS Defense Center</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
 
-                // Display the IP address
-                document.getElementById('ip').innerText = "Your IP address is: " + ipAddress;
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
 
-                // Now, use the IP address to get geolocation (country)
-                fetch(`https://api.country.is/${ipAddress}`)
-                    .then(response => response.json())
-                    .then(locationData => {
-                        // Display the country
-                        document.getElementById('country').innerText = "Your country is: " + locationData.country;
-                        if(locationData.country !== "CA") {
-                            location.href= "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching country:', error);
-                        document.getElementById('country').innerText = 'Could not retrieve country';
-                    });
-            })
-            .catch(error => {
-                console.error('Error fetching IP address:', error);
-                document.getElementById('ip').innerText = 'Could not retrieve IP address';
-            });
-    </script>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <script src="js/app.js"></script>
 </head>
+
 <body>
-    <h1>Welcome to the IP Address Viewer</h1>
-    <p id="ip">Loading IP address...</p>
-    <p id="country">Loading country...</p>
+  <h1>Salut salut mon nom c Trump je laisse pas passer les immigrants</h1>
+  <p id="ip">Chargement de l'adresse IP...</p>
+  <p id="country">Chargement du pays visiteur...</p>
 </body>
+
 </html>
