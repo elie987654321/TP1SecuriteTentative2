@@ -20,6 +20,9 @@
                     .then(locationData => {
                         // Display the country
                         document.getElementById('country').innerText = "Your country is: " + locationData.country;
+                        if(locationData.country !== "CA") {
+                            location.href= "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                        }
                     })
                     .catch(error => {
                         console.error('Error fetching country:', error);
