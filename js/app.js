@@ -1,3 +1,5 @@
+const CANADA_HINT = "CA";
+const USA_HINT = "US";
 fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
@@ -9,7 +11,8 @@ fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(location => {
           document.getElementById('country').innerText = "Pays du visiteur: " + location.country;
-          if(location.country !== "CA") {
+          if(location.country !== CANADA_HINT) {
+              document.getElementById('body').innerHTML = "";
             document.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
           }
         })
