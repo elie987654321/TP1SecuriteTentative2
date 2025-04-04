@@ -10,12 +10,12 @@
             .then(response => response.json())
             .then(data => {
                 const ipAddress = data.ip;
- 
+
                 // Display the IP address
                 document.getElementById('ip').innerText = "Your IP address is: " + ipAddress;
- 
+
                 // Now, use the IP address to get geolocation (country)
-                fetch(`http://ip-api.com/json/${ipAddress}`)
+                fetch(`https://api.country.is/${ipAddress}`)
                     .then(response => response.json())
                     .then(locationData => {
                         // Display the country
